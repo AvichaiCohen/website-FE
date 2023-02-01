@@ -1,0 +1,13 @@
+.avatar_box {
+  background: aqua;
+  width: 50%;
+  position: relative;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+.username_avatar {
+  background-color: aliceblue;
+}
+.user:hover {
+  background: black;
+}

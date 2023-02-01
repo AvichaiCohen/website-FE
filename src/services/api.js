@@ -1,18 +1,31 @@
-import {axiosInstance as axios} from '../services/axiosInstance'
+import { axiosInstance as axios } from "./axiosInstance";
+const CREATE_NEW_USER = () => `api/public/user/create`;
+const AUTHENTICATE = () => `api/public/authenticate`;
+const GET_ALL_ITEMS = () => `website/item/getAll`;
+const CREATE_NEW_ORDER = () => `website/order/`;
+const ADD_ITEM_TO_LIST = () => `website/item/order/add`;
 
-const GET_ALL_COURSES = () => `course/all`;
-const CREATE_NEW_REGISTERED_STUDENT = () => `student/create`;
-const GET_ALL_STUDENTS = () => `student/all`;
+const TEST_API = () => `api/public/test1`;
 
-
-export const getAllCourses = () => {
-    return axios.get(GET_ALL_COURSES());
+export const addItemToList = (orderList) => {
+  return axios.post(ADD_ITEM_TO_LIST(), orderList);
+};
+export const createNewOrder = (userOrder) => {
+  return axios.post(CREATE_NEW_ORDER(), userOrder);
 };
 
-export const createNewRegisteredStudent = (studentBody) => {
-    return axios.post(CREATE_NEW_REGISTERED_STUDENT(), studentBody);
-}
+export const createNewUser = (userBody) => {
+  return axios.post(CREATE_NEW_USER(), userBody);
+};
 
-export const getAllStudents = () => {
-    return axios.get(GET_ALL_STUDENTS());
+export const authenticate = (userBody) => {
+  return axios.post(AUTHENTICATE(), userBody);
+};
+
+export const testAuthenticatedApi = (params) => {
+  return axios.get(TEST_API(), { params: params });
+};
+
+export const getAllItems = () => {
+  return axios.get(GET_ALL_ITEMS());
 };
