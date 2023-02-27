@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import "./SearchBar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
-import { CustomLink } from "./Navbar";
-import ItemPage from "../../pages/ItemPage";
 
 function SearchBar({ placeholder, data }) {
   const [filteredData, setFilteredData] = useState([]);
@@ -51,7 +49,6 @@ function SearchBar({ placeholder, data }) {
             return (
               <a
                 className="dataItem"
-                href={<CustomLink to={<ItemPage></ItemPage>}></CustomLink>}
                 target="_blank"
               >
                 <p>{value.title} </p>
